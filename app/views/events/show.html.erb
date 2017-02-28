@@ -1,0 +1,131 @@
+<div id="show">
+  <p id="notice"><%= notice %></p>
+  <div class="title">
+    <h1>
+      <%= @event.name %>
+    </h1>
+  </div>
+  <div class="contain">
+    <div class="img">
+      <%= image_tag @event.image.url(:medium) %>
+    </div>
+    <div class="details">
+      <table class="detailstable">
+        <tr>
+          <td><strong>Name:</strong></td>
+          <td><%= @event.name %></td>
+        </tr>
+        <tr>
+          <td><strong>Event date:</strong></td>
+          <td><%= @event.event_date %></td>
+        </tr>
+        <tr>
+          <td><strong>Event time:</strong></td>
+          <td><%= @event.event_time %></td>
+        </tr>
+        <tr>
+          <td><strong>Place:</strong></td>
+          <td><%= @event.place %></td>
+        </tr>
+        <tr>
+          <td><strong>Area:</strong></td>
+          <td><%= @event.area %></td>
+        </tr>
+        <tr>
+          <td><strong>Address:</strong></td>
+          <td><%= @event.address %></td>
+        </tr>
+        <tr>
+          <td><strong>Phone:</strong></td>
+          <td><%= @event.phone %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="description">
+      <%= @event.description %>
+    </div>
+    <br><br><br>
+    &nbsp;&nbsp;<%= link_to 'Back', pages_event_path %>
+  </div>
+
+  
+
+
+  <% currenttitle = @event.name %>
+  <% currentdate = @event.event_date %>
+  <% currentarea = @event.area %>
+
+  
+  
+  <div class="socialsection">
+    <div class="buttons">
+      <%= social_share_button_tag(@event.name) %>
+    </div>
+  </div>
+
+
+
+  <div class="relatedsection">
+    <div class="bigblock">
+      <div class="categorytitle">
+        <strong>Same Venue</strong>
+      </div>
+      <%x = 1%>
+      <% @events.each do |event| %>
+        <% if currentarea == event.area && x<4 && currenttitle != event.name%>
+          <%if x < 4  %>
+            <div class="smallblock">
+              <div class="thumbnail">
+                <%= link_to (image_tag event.image.url(:thumb)), event%>
+              </div>
+              <div class="info">
+                <div class="smalltitle">
+                  <%=link_to event.name , event %> 
+                </div>
+                <div class="infoinfo">
+                  <div class="venue">
+                    <%= event.area %>              
+                  </div>
+                  <div class="date">
+                    <%= event.event_date %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% x = x + 1 %>
+          <%end%>
+        <%end%>
+      <%end%>
+    </div>
+    <%x = 1%>
+    <div class="bigblock">
+      <div class="categorytitle">
+        <strong>Same Date</strong>
+      </div>
+      <% @events.each do |event| %>
+        <% if currentdate == event.event_date && x<4 && currenttitle != event.name%>
+          <div class="smallblock">
+            <div class="thumbnail">
+              <%= link_to (image_tag event.image.url(:thumb)), event%>
+            </div>
+            <div class="info">
+              <div class="smalltitle">
+                <%=link_to event.name , event %> 
+              </div>
+              <div class="infoinfo">
+                <div class="venue">
+                  <%= event.area %>  
+                </div>
+                <div class="date">
+                  <%= event.event_date %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% x = x + 1 %>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,80 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main {
+	background-color: #d8d8d8;
+	display: inline-block;
+	width: 26%;
+	height: 432px;
+	margin: 10px;
+	border: 1px solid;
+	border-color: #c4c4c4;
+	border-radius: 3px;
+
+	.details {
+		align-items: center;
+		margin: 5%;
+		margin-top: 0.5%;
+		width: 90%;
+		border: 0;
+
+		.title {
+			margin: 1px;
+			text-align: left;
+			border: 0;
+
+			a {
+				text-decoration: none;
+				text-align: left;
+				color: #3d3d3d;
+				font-weight: bold;
+			}
+		}
+
+		.meh {
+			color: #545454;
+		}
+	}
+	.imagecontainer {
+		align-items: center;
+		margin: 5%;
+		margin-bottom: 0.5%;
+		border: 1px solid;
+		border-color: #c4c4c4;
+		width: 90%;
+		height: 70%;
+	}
+}
+
+
+
+.title {
+	text-align: center;
+}
+
+.content {
+	margin: 25px
+}
+.hello {
+  font-size: 4em;
+}
+.please {
+  display: inline-block;
+  width: 150px;
+  height: 75px;
+  margin: 10px;
+  border: 3px solid #73AD21;
+}
+.container {
+	margin: 16.31%;
+	border: 1px dashed;
+}
+
+#year {
+	display: inline-block;
+	background-color: gray;
+	border-radius: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}

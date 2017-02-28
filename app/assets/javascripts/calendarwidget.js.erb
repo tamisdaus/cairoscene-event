@@ -1,0 +1,110 @@
+var month = [ 
+		"Jan",
+       	"Feb",
+       	"Mar",
+       	"Apr",
+       	"May",
+       	"Jun",
+       	"Jul",
+       	"Aug",
+       	"sep",
+       	"oct",
+       	"nov",
+       	"dec",
+     	]
+var x=1;
+var y=2017;
+
+function tolak() {
+	x--;
+	if (x == -1) 
+	{
+		x = 11;
+		y--;
+	}
+	document.getElementById('monthname').innerHTML = month[x];
+	document.getElementById('year').innerHTML = y;
+	changeday();
+}
+
+function tambah() {
+	x++;
+	if (x == 12) {
+		x = 0;
+		y++;
+	}
+	document.getElementById('monthname').innerHTML = month[x];
+	document.getElementById('year').innerHTML = y;
+	changeday();
+}
+
+function daysInMonth(month,year) {
+    return new Date(year, month, 0).getDate();
+}
+
+function buttonloop(z) {
+	function moreten(a) {
+		if (a<10) {
+			return "0" + a;
+		} else {
+			return a;
+		}
+	}
+	var oo = '</a>';
+	var l = "";
+	for (var i = 1; i <= z; i++) {
+		var o = '<a href="?search=2017-'+(moreten(x+1))+'-'+(moreten(i))+'" class="btn">';
+		l = l + o + i + oo;
+	}
+	return l;
+}
+
+function changeday() {
+	document.getElementById('days').innerHTML = buttonloop(daysInMonth(x+1,y));
+}
+
+function tahunplus() {
+	y=y-1;
+	document.getElementById('year').innerHTML = y;
+	changeday();
+}
+
+function tahunminus() {
+	y=y+1;
+	document.getElementById('year').innerHTML = y;
+	changeday();
+}
+
+function current() {
+	var n = Date.getMonth();
+	var y = Date.getYear();
+	document.getElementById('monthname').innerHTML = n;
+	document.getElementById('year').innerHTML = y;
+	changeday();
+}
+
+function switchh(){
+	if (document.getElementById('searchh').style.visibility != "hidden") {
+		document.getElementById('searchh').style.visibility = "hidden";
+		document.getElementById('calendar').style.visibility = "visible";
+		changeday();
+	} else {
+		document.getElementById('searchh').style.visibility = "visible";
+		document.getElementById('calendar').style.visibility = "hidden";
+	}
+}
+
+function navfirst() {
+	document.getElementById('searchh').style.visibility = "visible";
+	document.getElementById('calendar').style.visibility = "hidden";
+	document.getElementById("first").className = "active";
+	document.getElementById("second").className = "non";
+}
+
+function navsecond() {
+	document.getElementById('searchh').style.visibility = "hidden";
+	document.getElementById('calendar').style.visibility = "visible";
+	document.getElementById("second").className = "active";
+	document.getElementById("first").className = "non";
+	changeday();
+}

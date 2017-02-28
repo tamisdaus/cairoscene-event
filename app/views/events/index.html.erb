@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<div class="index" align="center">
+  <h1>Events</h1>
+  <table align="center" border="0px">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Event date</th>
+        <th>Event time</th>
+        <th>Place</th>
+        <th>Area</th>
+        <th>venue</th>
+        <th>image</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.event_date %></td>
+          <td><%= event.event_time %></td>
+          <td><%= event.place %></td>
+          <td><%= event.area %></td>
+          <td><%= event.address %></td>
+          <td><%=image_tag event.image.url(:thumb) %></td>
+          <td><%= link_to 'Show', event %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>

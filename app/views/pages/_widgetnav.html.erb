@@ -1,0 +1,23 @@
+<div class="dates">
+	<div class="smallnav">
+		<ul>
+			<li id="first" class="active"><a href="javascript:void(0)" onclick="navfirst()">EXPLORE</a></li>
+			<li id="second" class=""><a href="javascript:void(0)" onclick="navsecond()">EVENTS CALENDAR</a></li>
+		</ul>
+	</div>
+	<div id="calendar">
+		<div class="month">
+			<button class="backyear" onclick="tahunplus()">&lt;&lt;</button>
+			<button class="back" onclick="tolak()">&lt;</button>
+			<div id="monthname">Feb</div>
+			<div id="year" onload="current()">2017</div>
+			<button class="forward" onclick="tambah()">&gt;</button>
+			<button class="nextyear" onclick="tahunminus()">&gt;&gt;</button>
+		</div>
+		<div id="days">days</div>
+	</div>
+	<!--<button class="switcha" onclick="switchh()">switch</button>-->
+	<div id="searchh">
+		<%= render('datepicker') %>
+	</div>
+</div>

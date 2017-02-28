@@ -1,0 +1,7 @@
+<%= form_tag pages_event_path, :method => 'get' do %>
+	date = <%= date_field_tag :search, params[:search] %> &nbsp;&nbsp;
+	name = <%= text_field_tag :search2, params[:search2] %> &nbsp;&nbsp;
+	state = <%= text_field_tag :search3, params[:search3] %> &nbsp;&nbsp;
+	<%= submit_tag "search" %>
+<% end %>
+<br>

@@ -1,0 +1,4 @@
+<input id="tarikh" type="text" data-provide='datepicker'>
+<button class="search" onclick="cari()">search</button>
+<%= link_to "search", events_path, id:"search_link", remote: true%>
+<div id="testt">pick a date here to filter</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mascene</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="section">
+      <div class="nav">
+        <ul>
+          <li><%=link_to 'home', root_path%></li>
+          <li><%=link_to 'events index', events_path%></li>
+          <li><%=link_to 'event page', pages_event_path%></li>
+          <li style="float: right;"><a href="#">CONTRIBUTE</a></li>
+          <li style="float: right;"><a href="#">SUGGEST EVENT</a></li>
+          <li style="float: right;"><a href="#">BOOKMARK</a></li>
+          <li style="float: right;"><a href="#">SUBSCRIBE</a></li>
+        </ul>
+      </div>
+    </div>
+  	<p class="notice"><%= notice %></p>
+  	<p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

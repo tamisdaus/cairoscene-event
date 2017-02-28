@@ -1,0 +1,22 @@
+<div class="content">
+	<div class="dates">
+		<!-- <div class="calendar">
+			<div class="month">
+				<button class="back" onclick="tolak()">last</button>
+				<div id="monthname">Month</div>
+				<button class="forward" onclick="tambah()">next</button>
+			</div>
+			<div id="days">hello</div>
+		</div> -->
+		<input id="tarikh" type="text" data-provide='datepicker'>
+		<button class="search" onclick="cari()">search</button>
+		<%= link_to "new", new_event_path, id:"new_link", remote:true%>
+		<div id="testt">pick a date here to filter</div>
+	</div>
+	<div id="result">
+		
+	</div>
+	<div id="post">
+		<%= render('post') %>
+	</div>
+</div>
