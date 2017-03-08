@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   def result
   	 @events = Event.all
   end
+
+  def contribute
+  end
 end
