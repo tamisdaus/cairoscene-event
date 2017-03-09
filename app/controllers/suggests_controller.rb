@@ -28,7 +28,7 @@ class SuggestsController < ApplicationController
 
     respond_to do |format|
       if @suggest.save
-        format.html { redirect_to @suggest, notice: 'Suggest was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Suggest was successfully created.' }
         format.json { render :show, status: :created, location: @suggest }
       else
         format.html { render :new }

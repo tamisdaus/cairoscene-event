@@ -71,6 +71,7 @@
 			&:hover {
 			    background-color: white;
 			    color: black;
+				border-bottom: 1px solid;
 			    box-shadow: 0px -2px 1px black;
 			    a {
     				color :black;
@@ -85,5 +86,20 @@
 				color :black;
 			}
 		}
+	}
+}
+#line{
+	background-color: white;
+	border-right: 1px;
+	border-bottom: 1px solid;
+	border-left: 1px solid;
+	border-color: gray;
+	display: inline-block;
+	width: 870px;
+	height: 28px;
+	&:hover{
+		background-color: white;
+		color: white;
+		box-shadow: none;
 	}
 }
