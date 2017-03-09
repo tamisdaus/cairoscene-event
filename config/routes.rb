@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :suggests
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :events
   root 'pages#event'

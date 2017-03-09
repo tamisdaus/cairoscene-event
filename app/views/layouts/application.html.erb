@@ -15,8 +15,8 @@
 		  <%if user_signed_in?%>
 			<li style="float: right;"><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
 		  <%end%>
+		  <li style="float: right;"><%= link_to "SUGGEST EVENT", new_event_path %></li>
           <li style="float: right;"><%= link_to "CONTRIBUTE", pages_contribute_path %></li>
-          <li style="float: right;"><%= link_to "SUGGEST EVENT", new_suggest_path %></li>
           <li style="float: right;"><a href="#" onclick="bookmark()">BOOKMARK</a></li>
           <li style="float: right;"><a href="#">SUBSCRIBE</a></li>
         </ul>
