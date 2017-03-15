@@ -1,5 +1,5 @@
 <%= form_tag pages_event_path, :method => 'get' do %>
-	Date <%= date_field_tag :search, params[:search], value:nil %> &nbsp;&nbsp;
+	Date <%= date_field_tag :search, params[:search]%> &nbsp;&nbsp;
 	Name <%= text_field_tag :search2, params[:search2] %> &nbsp;&nbsp;
 	State <%= text_field_tag :search3, params[:search3] %> &nbsp;&nbsp;
 	<%= submit_tag "search", class: "btn btn-default" %> &nbsp;<%= link_to "Reset", root_path, class: "btn btn-default"%>

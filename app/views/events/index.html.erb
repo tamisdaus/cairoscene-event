@@ -27,6 +27,7 @@
           <td><%=image_tag event.image.url(:thumb) %></td>
           <td><%= link_to 'Show', event %></td>
           <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  <td><%=link_to 'edit', edit_event_path(event) %></div>
         </tr>
       <% end %>
     </tbody>

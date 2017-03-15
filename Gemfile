@@ -61,3 +61,5 @@ gem 'rails_admin', '~> 1.0'
 gem 'bootstrap-datepicker-rails'
 
 gem 'social-share-button'
+
+gem 'recaptcha', require: 'recaptcha/rails'

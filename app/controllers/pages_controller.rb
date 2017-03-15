@@ -12,4 +12,11 @@ class PagesController < ApplicationController
 
   def contribute
   end
+  
+  def approving
+	  @events = Event.all
+  end
+  
+  def edit
+  end
 end

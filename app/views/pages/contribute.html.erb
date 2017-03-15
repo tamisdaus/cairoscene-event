@@ -1,1 +1,35 @@
-hello ni page contribute
+<style>
+	 div.container{
+		border: 1px solid;
+		border-color: #c9cfd8;
+		display: inline-block;
+		width: 200px;
+		padding: 8px;
+		margin: 0px;
+		border-radius: 3px;
+	 }
+</style>
+<h1 align="center">Help Us! :D</h1>
+
+<div class="container" style="width: 100%; border:none;" align="center">
+	<div class="container" align="center">
+		<h4>Donate Here!</h4>
+		<button class="btn btn-default">click me!</button>
+	</div>
+
+	<div class="container" align="center">
+		<h4>Be A Moderator!</h4>
+		<button class="btn btn-default">click me!</button>
+	</div>
+
+	<div class="container" align="center">
+		<h4>Suggest An Event!</h4>
+		<%=link_to "Click Me!", new_event_path, class:"btn btn-default"%>
+	</div>
+
+	<!--<div class="container" align="center">
+		<h4>Donate Here</h4>
+		<button class="btn btn-default">click me!</button>
+	</div>
+	-->
+</div>

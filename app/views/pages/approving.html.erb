@@ -1,0 +1,31 @@
+<h1>Approving page</h1>
+<div>
+	<% @events.each do |event| %>
+		<%if event.confirmed == false || event.confirmed == nil%>
+			<div class="main">
+				<div class="imagecontainer">
+					<%= link_to (image_tag event.image.url(:medium)), event%>
+				</div>
+				<div class="details">
+					<div class="title">
+						<%=link_to event.name , event %> 
+					</div>
+					<div class="meh">
+						<%= event.event_date %>
+					</div>
+					<div class="meh">
+						<%=event.event_time%>
+					</div>
+					<div class="meh">
+						<%=event.address%>
+					</div>
+					<%#render('approve')%>
+					<%=link_to "approve", edit_event_path(event)%>
+					<button>upvote</button>
+					<button>downvote</button>
+					0/0
+				</div>
+			</div>
+		<%end%>
+	<%end%>
+</div>
