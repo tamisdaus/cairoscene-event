@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pretty/index'
+
+  get 'pretty/gallery'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :events
   root 'pages#event'
