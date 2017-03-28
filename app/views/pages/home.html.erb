@@ -1,49 +1,13 @@
-<h1>Pages#home</h1>
-<div class="hello">
-	hello world!
-</div>
-<br><br>
-<div class="container">
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-	<div class="please">
-		float!
-	</div>
-</div>
+<% if user_signed_in? %>
+	<% if current_user.level == "admin" %>
+		<% redirect_to rails_admin_path %>
+	<% elsif current_user.level == "moderator" %>
+		<% redirect_to pages_approving_path %>
+	<% else %>
+		<% redirect_to root_path %>
+	<% end %>
+<% else %>
+	<% redirect_to root_path %>
+<% end %>
+
+<p> one sec :) </p>

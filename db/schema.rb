@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317032912) do
+ActiveRecord::Schema.define(version: 20170323180907) do
 
   create_table "events", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",               null: false
     t.date     "event_date"
     t.time     "event_time"
     t.string   "place"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 20170317032912) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "confirmed"
+  end
+
+  create_table "modlists", force: :cascade do |t|
+    t.boolean  "apply"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "suggests", force: :cascade do |t|

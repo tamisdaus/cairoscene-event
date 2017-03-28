@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for @event, html: { multipart: true } do |f| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
@@ -23,12 +24,12 @@
 
   <div class="field">
     <%= f.label :event_date %><br>
-    <%= f.date_select :event_date, class:"form-control" %>
+    <%= f.date_select :event_date, class:"formss" %>
   </div>
-
+	
   <div class="field">
     <%= f.label :event_time %><br>
-    <%= f.time_select :event_time, class:"form-control" %>
+    <%= f.time_select :event_time, class:"formss" %>
   </div>
 
   <div class="field">
@@ -62,10 +63,11 @@
     <%= f.check_box :confirmed, {}, "true", "false"%>
   </div>
   <%end%>
-  
+  <br>
   <%= recaptcha_tags %><br>
   
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

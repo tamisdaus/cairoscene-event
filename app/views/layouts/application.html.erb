@@ -8,23 +8,104 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div class="section">
-      <div class="nav">
-        <ul>
-          <li><%=link_to 'event page', pages_event_path%></li>
+  <div class="wrapper row0">
+	  <div id="topbar" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+		<div class="fl_left">
+		  <ul class="nospace inline pushright">
+			<li><i class="fa fa-phone"></i> +60 (011) 2815 7471</li>
+			<li><i class="fa fa-envelope-o"></i> event@gmail.com</li>
+		  </ul>
+		</div>
+		<div class="fl_right">
+		  <ul class="nospace inline pushright">
+			<%if user_signed_in?%>
+				<li><i class="fa fa-user"></i><%= link_to "account", edit_user_registration_path %></li>
+				<li><i class="fa fa-sign-in"></i><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
+			<%else%>
+				<!--<li><i class="fa fa-user"></i> <a href="#">Register</a></li> -->
+				<li><i class="fa fa-sign-in"></i><%= link_to "login", new_user_session_path %></li>
+			<%end%>
+		  </ul>
+		</div>
+		<!-- ################################################################################################ -->
+	  </div>
+	</div>
+    <div class="wrapper row1">
+	  <header id="header" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+		<div id="logo" class="fl_left">
+		  <h1><%= link_to "About Events", root_path %></h1>
+		</div>
+		<!-- ################################################################################################ -->
+	  </header>
+	</div>
+	<!-- ################################################################################################ -->
+	<div class="wrapper row2">
+	  <nav id="mainav" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+		<ul class="clear">
+		  <li><%= link_to "Home", root_path %></li>
 		  <%if user_signed_in?%>
-			<li><%=link_to 'Approving page', pages_approving_path%></li>
-			<li style="float: right;"><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
+		  <li><a class="drop" href="#">Tools</a>
+			<ul>
+			  <% if current_user.level == "admin" %>
+			    <li><%= link_to "Approving", pages_approving_path %></li>
+			  <% end %>
+			  <li><%= link_to "Account Home", pages_home_path %></li>
+			  <li><%= link_to "Suggest Event", new_event_path %></li>
+			</ul>
+		  </li>
 		  <%end%>
-		  <li style="float: right;"><%= link_to "SUGGEST EVENT", new_event_path %></li>
-          <li style="float: right;"><%= link_to "CONTRIBUTE", pages_contribute_path %></li>
-          <li style="float: right;"><a href="#" onclick="bookmark()">BOOKMARK</a></li>
-          <li style="float: right;"><a href="#">SUBSCRIBE</a></li>
-        </ul>
-      </div>
-    </div>
+		  <li><%= link_to "Contribute", pages_contribute_path, class:"drop" %>
+			<ul>
+			  <li><%= link_to "Suggest Event", new_event_path %></li>
+			</ul>
+		  </li>
+		</ul>
+		<!-- ################################################################################################ -->
+	  </nav>
+	</div>
   	<p class="notice"><%= notice %></p>
   	<p class="alert"><%= alert %></p>
     <%= yield %>
+	<div class="wrapper row5">
+	  <div id="social" class="hoc clear"> 
+		<!-- ################################################################################################ -->
+		<div class="one_half first">
+		  <h6 class="title">Social Media</h6>
+		  <ul class="faico clear">
+			<li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+			<li><a class="faicon-pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
+			<li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+			<li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+			<li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+			<li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+			<li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+			<li><a class="faicon-youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+			<li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>
+		  </ul>
+		</div>
+		<div class="one_half">
+		  <h6 class="title">not necessarily Newsletter subscription</h6>
+		  <p>anything here</p>
+		</div>
+		<!-- ################################################################################################ -->
+	  </div>
+	</div>
+	
+	<!-- ################################################################################################ -->
+	<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+	
+	
+	
+	
+	<!-- JaVaScript -->
+	<script src="../layout/scripts/jquery.min.js"></script>
+	<script src="../layout/scripts/jquery.backtotop.js"></script>
+	<script src="../layout/scripts/jquery.mobilemenu.js"></script>
+	
+	<script src="../layout/scripts/jquery.placeholder.min.js"></script>
+	
   </body>
 </html>

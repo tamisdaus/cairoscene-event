@@ -4,7 +4,7 @@
 		<%if event.confirmed == false || event.confirmed == nil%>
 			<div class="main">
 				<div class="imagecontainer">
-					<%= link_to (image_tag event.image.url(:medium)), event%>
+					<%= link_to (image_tag event.image.url(:medium)), edit_event_path(event)%>
 				</div>
 				<div class="details">
 					<div class="title">
@@ -19,13 +19,10 @@
 					<div class="meh">
 						<%=event.address%>
 					</div>
-					<%#render('approve')%>
-					<%=link_to "approve", edit_event_path(event)%>
-					<button>upvote</button>
-					<button>downvote</button>
-					0/0
+					<%=link_to "show", event%>
 				</div>
 			</div>
 		<%end%>
 	<%end%>
 </div>
+<br><br><br><br><br><br><br><br>

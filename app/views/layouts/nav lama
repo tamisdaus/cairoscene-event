@@ -1,0 +1,15 @@
+<div class="section">
+      <div class="nav">
+        <ul>
+          <li><%=link_to 'event page', pages_event_path%></li>
+		  <%if user_signed_in?%>
+			<li><%=link_to 'Approving page', pages_approving_path%></li>
+			<li style="float: right;"><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
+		  <%end%>
+		  <li style="float: right;"><%= link_to "SUGGEST EVENT", new_event_path %></li>
+          <li style="float: right;"><%= link_to "CONTRIBUTE", pages_contribute_path %></li>
+          <li style="float: right;"><a href="#" onclick="bookmark()">BOOKMARK</a></li>
+          <li style="float: right;"><a href="#">SUBSCRIBE</a></li>
+        </ul>
+      </div>
+    </div>

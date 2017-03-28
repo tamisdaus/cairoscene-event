@@ -7,7 +7,7 @@
   </div>
   <div class="contain">
     <div class="img">
-      <%= image_tag @event.image.url(:medium) %>
+      <%= image_tag @event.image.url(:large) %>
     </div>
     <div class="details">
       <table class="detailstable">
@@ -45,9 +45,9 @@
       <%= @event.description %>
     </div>
     <br><br><br>
-    &nbsp;&nbsp;<%= link_to 'Back', pages_event_path %>
+    &nbsp;&nbsp;<%= link_to 'Back', pages_event_path, class:"btn btn-default" %>
   </div>
-
+<br><br><br>
   
 
 
@@ -59,7 +59,7 @@
   
   <div class="socialsection">
     <div class="buttons">
-      <%= social_share_button_tag(@event.name) %>
+      <%= social_share_button_tag(@event.name)%>
     </div>
   </div>
 
@@ -128,4 +128,7 @@
     </div>
   </div>
   <br>
+  <div class="widgettwitter" align="center">
+  
+  </div>
 </div>

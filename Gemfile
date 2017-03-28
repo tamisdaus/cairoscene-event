@@ -63,3 +63,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'social-share-button'
 
 gem 'recaptcha', require: 'recaptcha/rails'
+
+gem 'twitter', '3.0.0.rc.1'
+
+gem 'omniauth-twitter'
