@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get 'pages/event'
   get 'pages/home'
   get 'pages/result'
-  get 'pages/contribute'
   get 'pages/approving'
 
   devise_for :users
