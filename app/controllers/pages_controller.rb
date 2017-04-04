@@ -20,9 +20,6 @@ class PagesController < ApplicationController
   def result
   	 @events = Event.all
   end
-
-  def contribute
-  end
   
   def approving
 	  @events = Event.all
@@ -32,5 +29,6 @@ class PagesController < ApplicationController
   end
   
   def twitter
+    
   end
 end

@@ -1,4 +1,45 @@
-<div>
+<div style="display: none;">
 <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/TamisDaus">Tweets by TamisDaus</a>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
+<%require "twitter"%>
+<%client = Twitter::REST::Client.new do |config|%>
+  <%config.consumer_key        = ENV['TWITTER_KEY']%>
+  <%config.consumer_secret     = ENV['TWITTER_SECRET']%>
+  <%config.access_token        = ENV['ACCESS_TOKEN']%>
+  <%config.access_token_secret = ENV['ACCESS_SECRET']%>
+<%end%>
+<% @tweets = client.user_timeline("@GambarKlasik").take(20)%>
+<h2>Favorites here</h2>
+<table>
+	<tr>
+		<td>
+			tweet id
+		</td>
+		<td>
+			tweets
+		</td>
+		<td>
+			username
+		</td>
+	</tr>
+		<% @tweets.each do |x| %>
+	<tr>
+		<td>
+			<%=x.id %>
+		</td>
+		<td>
+			<%= "-"+x.text %>
+		</td>
+		<td>
+			<%= x.user.screen_name %>
+		</td>
+	</tr>
+		<%end%>
+</table>
+
+	<%@tweets.each do |tweet|%>
+		<div style="width: 100px; height: 100px; display: inline-block;">
+			<%=image_tag(tweet.media[0]["media_url"]) if(tweet.media.present?)%>
+		</div>
+	<%end%>
