@@ -9,7 +9,7 @@
   <%config.access_token        = ENV['ACCESS_TOKEN']%>
   <%config.access_token_secret = ENV['ACCESS_SECRET']%>
 <%end%>
-<% @tweets = client.user_timeline("@GambarKlasik").take(20)%>
+<% @tweets = client.user_timeline("@about_events_my").take(20)%>
 <h2>Favorites here</h2>
 <table>
 	<tr>
@@ -43,3 +43,50 @@
 			<%=image_tag(tweet.media[0]["media_url"]) if(tweet.media.present?)%>
 		</div>
 	<%end%>
+	
+<hr><hr><br><br>
+
+<div class="container">
+	<%@tweets = client.favorites("@about_events_my").take(2)%>
+	<%@tweets.each do |c| %>
+		<br>
+		<% if c.text.include? "POST" %>
+			<%= true %>
+			<% client.update("BERJAYA POST") %>
+			<% aidis = c.id %>
+			<% pas = c.text.split('+') %>
+			<% pas.each do |x| %>
+				<%= x %>
+				<br>
+			<%end%>
+			<%# content = pas[1] %>
+			<%# content %>
+			<%# client.update(content) %>
+			<% client.destroy_status(aidis) %>
+		<%end%>
+		
+		<%# c.text %>
+		
+	<%end%>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

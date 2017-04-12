@@ -1,5 +1,7 @@
-<h1>Approving page</h1>
-<div>
+<div class="container">
+	<h1>Approving page</h1>
+	<hr>
+	<% x = 0 %>
 	<% @events.each do |event| %>
 		<%if event.confirmed == false || event.confirmed == nil%>
 			<div class="main">
@@ -22,7 +24,11 @@
 					<%=link_to "show", event%>
 				</div>
 			</div>
+			<% x = x + 1 %>
 		<%end%>
+	<%end%>
+	<%if x < 1 %>
+		<h2>No Events Need Approval</h2>
 	<%end%>
 </div>
 <br><br><br><br><br><br><br><br>

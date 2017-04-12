@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: [:event, :show, :contribute, :new, :create]
+  before_action :authenticate_user!, except: [:event, :show, :contribute, :new, :create, :twitter]
   protect_from_forgery with: :exception
   
   

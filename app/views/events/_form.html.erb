@@ -58,10 +58,12 @@
   </div>
   <br><br>
   <%if user_signed_in?%>
-  <div class="field">
-    <%= f.label :confirmed %><br>
-    <%= f.check_box :confirmed, {}, "true", "false"%>
-  </div>
+	<%if current_user.admin == true%>
+	  <div class="field">
+		<%= f.label :confirmed %><br>
+		<%= f.check_box :confirmed, {}, "true", "false"%>
+	  </div>
+	<%end%>
   <%end%>
   <br>
   <%= recaptcha_tags %><br>
