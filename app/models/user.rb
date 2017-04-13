@@ -4,13 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable
 		 
-  devise :omniauthable, :omniauth_providers => [:twitter]
+  devise :omniauthable, :omniauth_providers => [:instagram,:twitter]
 
   def self.from_omniauth(auth)
-	Rails.logger.debug auth
+    Rails.logger.debug auth
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = "#{auth.info.nickname}@example.org"
+      user.email = "#{auth.info.nickname}@#{auth.provider}.com"
       user.password = Devise.friendly_token[0,20]
     end      
   end
 end
+
+
+

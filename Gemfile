@@ -68,4 +68,8 @@ gem 'twitter'
 
 gem 'omniauth-twitter'
 
+gem 'omniauth-instagram'
+
+gem 'instagram'
+
 gem 'figaro'

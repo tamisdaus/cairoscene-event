@@ -21,7 +21,7 @@
 					<div class="meh">
 						<%=event.address%>
 					</div>
-					<%=link_to "show", event%>
+					<%=link_to "Show", event%>&nbsp;||&nbsp;<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
 				</div>
 			</div>
 			<% x = x + 1 %>
