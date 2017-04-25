@@ -29,6 +29,5 @@ class PagesController < ApplicationController
   end
   
   def twitter
-    
   end
 end

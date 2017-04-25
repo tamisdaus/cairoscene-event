@@ -9,7 +9,7 @@
   <%config.access_token        = ENV['ACCESS_TOKEN']%>
   <%config.access_token_secret = ENV['ACCESS_SECRET']%>
 <%end%>
-<% @tweets = client.user_timeline("@about_events_my").take(20)%>
+<% @tweets = client.user_timeline("@TamisDaus").take(20)%>
 <h2>Favorites here</h2>
 <table>
 	<tr>
@@ -45,23 +45,23 @@
 	<%end%>
 	
 <hr><hr><br><br>
-
+<!-- bawah ni automation untuk tweet, amik data ,delete tweet and repost back -->
 <div class="container">
-	<%@tweets = client.favorites("@about_events_my").take(2)%>
+	<%@tweets = client.favorites("@TamisDaus").take(2)%>
 	<%@tweets.each do |c| %>
 		<br>
 		<% if c.text.include? "POST" %>
 			<%= true %>
-			<% client.update("BERJAYA POST") %>
+			<%# client.update("BERJAYA POST") %>
 			<% aidis = c.id %>
 			<% pas = c.text.split('+') %>
 			<% pas.each do |x| %>
 				<%= x %>
 				<br>
 			<%end%>
-			<%# content = pas[1] %>
-			<%# content %>
-			<%# client.update(content) %>
+			<% content = pas[1] %>
+			<%= content %>
+			<% client.update(content) %>
 			<% client.destroy_status(aidis) %>
 		<%end%>
 		
@@ -70,9 +70,21 @@
 	<%end%>
 </div>
 
+<br><br><br><br>
 
-
-
+<div class="container">
+	<%#client = Instagram.client(:access_token => session[:access_token])%>
+		<%#user = client.user%>
+		<%#html = "<h1>#{user.username}'s recent media</h1>"%>
+		<%#for media_item in client.user_recent_media%> 
+		<!--<div style="float:left;"> -->
+		<!--<img src="#{media_item.images.thumbnail.url}"> -->
+		<!--<br/> -->
+		<!--<a href="/media_like/#{media_item.id}">Like</a> -->
+		<!--<a href="/media_unlike/#{media_item.id}">Un-Like</a> -->
+		<!--<br/>LikesCount=#{media_item.likes[:count]}</div> -->
+	<%#end%>
+</div>
 
 
 

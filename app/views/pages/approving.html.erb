@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-left:150px; width: 1150px;">
 	<h1>Approving page</h1>
 	<hr>
 	<% x = 0 %>
@@ -16,7 +16,7 @@
 						<%= event.event_date %>
 					</div>
 					<div class="meh">
-						<%=event.event_time%>
+						<%=event.event_time.strftime("%H:%M:%S")%>
 					</div>
 					<div class="meh">
 						<%=event.address%>

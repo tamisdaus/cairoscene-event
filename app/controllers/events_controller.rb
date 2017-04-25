@@ -4,6 +4,9 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+	if current_user.level != "admin"
+		redirect_to :root
+	end
     @events = Event.all
   end
 

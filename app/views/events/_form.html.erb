@@ -29,7 +29,7 @@
 	
   <div class="field">
     <%= f.label :event_time %><br>
-    <%= f.time_select :event_time, class:"formss" %>
+    <%= f.time_select :event_time, class:"formss", discard_date: true, discard_timezone: true %>
   </div>
 
   <div class="field">

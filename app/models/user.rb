@@ -11,6 +11,9 @@ class User < ApplicationRecord
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = "#{auth.info.nickname}@#{auth.provider}.com"
       user.password = Devise.friendly_token[0,20]
+	  if auth.provider == "instagram"
+		user.access_token = auth.access_token
+	  end
     end      
   end
 end
